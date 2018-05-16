@@ -26,27 +26,29 @@ public class SSUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
-            Student student = studentRepository.fi
-            User user = userRepository.findByUsername(username);
-            if (user == null) {
-                System.out.println("user not found with the provided username " + user.toString());
+            Student student = studentRepository.findByUsername(username);
+            if (student == null) {
+                System.out.println("user not found with the provided username " + student.toString());
                 return null;
             }
 
-            System.out.println(" user from username " + user.toString());
+            System.out.println(" user from username " + student.toString());
             return new org.springframework.security.core.userdetails.User(
-                    user.getUsername(), user.getPassword(), getAuthorities(user));
+                    student.getUsername(), student.getPassword(), getAuthorities(student.getUsertype()));
         } catch (Exception e){
             throw new UsernameNotFoundException("User not found");
         }
     }
 
-    private Set<GrantedAuthority> getAuthorities(User user){
+    private Set<GrantedAuthority> getAuthorities(String usertype){
         Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-        for(Role role : user.getRoles()) {
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getRole());
-            authorities.add(grantedAuthority);
+        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ADMIN");
+        if (usertype == "student")
+        {
+            grantedAuthority = new SimpleGrantedAuthority("USER");
         }
+        authorities.add(grantedAuthority);
+
         System.out.println("user authorities are " + authorities.toString());
         return authorities;
     }

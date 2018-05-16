@@ -28,10 +28,12 @@ public class Student {
 
     private String password;
 
+    private String usertype;
+
     public Student() {
     }
 
-    public Student(String name, PublicKey publicKey, PrivateKey privateKey, String headshot, Date lastLogin, String username, String password) {
+    public Student(String name, PublicKey publicKey, PrivateKey privateKey, String headshot, Date lastLogin, String username, String password, String usertype) {
         this.name = name;
         this.publicKey = publicKey;
         this.privateKey = privateKey;
@@ -39,6 +41,7 @@ public class Student {
         this.lastLogin = lastLogin;
         this.username = username;
         this.password = password;
+        this.usertype = usertype;
     }
 
     public long getId() {
@@ -103,5 +106,13 @@ public class Student {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
     }
 }
