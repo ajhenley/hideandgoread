@@ -22,6 +22,8 @@ public class Student {
 
     private String headshot;
 
+    private String email;
+
     private Date lastLogin;
 
     private String username;
@@ -33,7 +35,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(String name, PublicKey publicKey, PrivateKey privateKey, String headshot, Date lastLogin, String username, String password, String usertype) {
+    public Student(String name, PublicKey publicKey, PrivateKey privateKey, String headshot, Date lastLogin, String username, String password, String usertype, String email) {
         this.name = name;
         this.publicKey = publicKey;
         this.privateKey = privateKey;
@@ -42,6 +44,7 @@ public class Student {
         this.username = username;
         this.password = password;
         this.usertype = usertype;
+        this.email = email;
     }
 
     public long getId() {
@@ -114,5 +117,13 @@ public class Student {
 
     public void setUsertype(String usertype) {
         this.usertype = usertype;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
