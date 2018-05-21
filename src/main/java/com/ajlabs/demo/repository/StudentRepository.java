@@ -9,4 +9,5 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
     Long countByEmail(String email);
     Long countByUsername(String username);
     Iterable<Student> findAllByUsertype(String usertype);
+    Iterable<Student> findAllByClassidAndUsertype(Long id, String usertype);
 }

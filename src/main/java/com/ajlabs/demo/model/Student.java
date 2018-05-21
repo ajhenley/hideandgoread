@@ -1,9 +1,6 @@
 package com.ajlabs.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.Date;
@@ -14,10 +11,16 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    private Long classid;
+
     private String name;
 
+    @Lob
+    @Column(length=10000)
     private PublicKey publicKey;
 
+    @Lob
+    @Column(length=10000)
     private PrivateKey privateKey;
 
     private String headshot;
@@ -35,7 +38,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(String name, PublicKey publicKey, PrivateKey privateKey, String headshot, Date lastLogin, String username, String password, String usertype, String email) {
+    public Student(String name, PublicKey publicKey, PrivateKey privateKey, String headshot, Date lastLogin, String username, String password, String usertype, String email, Long classid) {
         this.name = name;
         this.publicKey = publicKey;
         this.privateKey = privateKey;
@@ -45,6 +48,7 @@ public class Student {
         this.password = password;
         this.usertype = usertype;
         this.email = email;
+        this.classid = classid;
     }
 
     public long getId() {
@@ -125,5 +129,13 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Long getClassid() {
+        return classid;
+    }
+
+    public void setClassid(Long classid) {
+        this.classid = classid;
     }
 }
