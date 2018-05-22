@@ -99,6 +99,10 @@ public class HomeController {
         return "redirect:/userlogin";
     }
 
+    @RequestMapping("/student")
+    public String student(){
+        return "student";
+    }
 
 
 
