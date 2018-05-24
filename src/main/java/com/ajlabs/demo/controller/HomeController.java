@@ -34,7 +34,7 @@ public class HomeController {
     @RequestMapping(value="/register", method = RequestMethod.GET)
     public String showRegistrationPage(Model model){
         model.addAttribute("student", new Student());
-        return "registration";
+        return "register";
     }
 
     @RequestMapping(value="/register", method = RequestMethod.POST)
@@ -49,7 +49,7 @@ public class HomeController {
         model.addAttribute("student", student);
 
         if (result.hasErrors()) {
-            return "registration";
+            return "register";
         } else {
             userService.createClassroom(student, course, stunames, numberOfStudents);
             model.addAttribute("message", "Teacher Account Successfully Created");
