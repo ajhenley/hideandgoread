@@ -35,7 +35,7 @@
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
-    <link rel="stylesheet" id="css-theme" href="assets/css/themes/xsmooth.min.css">
+    <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css">
     <!-- END Stylesheets -->
 </head>
 <body>
@@ -88,7 +88,7 @@ MAIN CONTENT LAYOUT
         <!-- Side Header -->
         <div class="content-header">
             <!-- Logo -->
-            <a class="link-fx font-size-lg text-dual" href="index.html">
+            <a class="link-fx font-size-lg text-dual" href="/user">
                 <span class="text-dual opacity-75">HideAndGo</span>
                 Read
             </a>
@@ -147,98 +147,15 @@ MAIN CONTENT LAYOUT
                 </li>
                 <li class="nav-main-item">
                     <a class="nav-main-link" href="">
-                        <i class="nav-main-link-icon fa fa-star text-warning"></i>
-                        <span class="nav-main-link-name">Starred</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
                         <i class="nav-main-link-icon far fa-paper-plane text-danger"></i>
                         <span class="nav-main-link-name">Sent Mail</span>
                     </a>
                 </li>
+
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
-                        <i class="nav-main-link-icon fa fa-box text-success"></i>
-                        <span class="nav-main-link-name">All Mail</span>
-                    </a>
-                </li>
-                <li class="nav-main-heading">Labels</li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
-                        <i class="nav-main-link-icon fa fa-tag"></i>
-                        <span class="nav-main-link-name">Personal</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
-                        <i class="nav-main-link-icon fa fa-tag"></i>
-                        <span class="nav-main-link-name">Work</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
-                        <i class="nav-main-link-icon fa fa-tag"></i>
-                        <span class="nav-main-link-name">Friends</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
-                        <i class="nav-main-link-icon fa fa-tag"></i>
-                        <span class="nav-main-link-name">Trips</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
-                        <i class="nav-main-link-icon fa fa-tag"></i>
-                        <span class="nav-main-link-name">Accounting</span>
-                    </a>
-                </li>
-                <li class="nav-main-heading">More</li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                        <i class="nav-main-link-icon fa fa-list"></i>
-                        <span class="nav-main-link-name">Categories</span>
-                    </a>
-                    <ul class="nav-main-submenu">
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <span class="nav-main-link-name">Social</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <span class="nav-main-link-name">Promotions</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <span class="nav-main-link-name">Updates</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <span class="nav-main-link-name">Forums</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link" href="">
-                                <span class="nav-main-link-name">Newsletters</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="">
+                    <a class="nav-main-link" href="/logout">
                         <i class="nav-main-link-icon fa fa-cog"></i>
-                        <span class="nav-main-link-name">Settings</span>
-                    </a>
-                </li>
-                <li class="nav-main-heading">Dashboards</li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="be_pages_dashboard_all.html">
-                        <i class="nav-main-link-icon si si-arrow-left"></i>
-                        <span class="nav-main-link-name">Go Back</span>
+                        <span class="nav-main-link-name">Log Out</span>
                     </a>
                 </li>
             </ul>
@@ -274,20 +191,6 @@ MAIN CONTENT LAYOUT
 
                     <!-- Side Content -->
                     <div id="side-content" class="d-none d-lg-block push">
-                        <!-- Search Messages -->
-                        <form action="db_messages.html" method="post" onsubmit="return false;">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-0" placeholder="Search Messages..">
-                                    <div class="input-group-append">
-                                                <span class="input-group-text border-0 bg-white">
-                                                    <i class="fa fa-fw fa-search"></i>
-                                                </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- END Search Messages -->
 
                         <!-- Sorting/Filtering -->
                         <div class="d-flex justify-content-between mb-2">
@@ -310,13 +213,13 @@ MAIN CONTENT LAYOUT
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right font-size-sm" aria-labelledby="inbox-msg-filter">
                                     <a class="dropdown-item active" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-asterisk mr-1"></i> New
+                                        <i class="fa fa-fw fa-asterisk mr-1"></i> Encrypted
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-certificate mr-1"></i> VIP
+                                        <i class="fa fa-fw fa-certificate mr-1"></i> Signed
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-exclamation-circle mr-1"></i> Important
+                                        <i class="fa fa-fw fa-exclamation-circle mr-1"></i> Encrypted & Signed
                                     </a>
                                 </div>
                             </div>
@@ -430,7 +333,7 @@ MAIN CONTENT LAYOUT
                                 </div>
                             </div>
                         </div>
-                        <div class="block-content">
+                        <div id="messagebody" class="block-content">
                             <p>Dear Admin,</p>
                             <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
                             <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
@@ -558,5 +461,19 @@ MAIN CONTENT LAYOUT
 
 <!-- Page JS Helpers (Summernote plugin) -->
 <script>jQuery(function(){ Dashmix.helpers('summernote'); });</script>
+<script>
+    $("button").click(function(){
+        $.getJSON("/getmessage",
+            {
+                id: "2"
+            },
+            function(result){
+            $.each(result, function(i, field){
+                $("div#messagebody").append(field + " ");
+            });
+        });
+    });
+
+</script>
 </body>
 </html>

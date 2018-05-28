@@ -62,16 +62,28 @@ public class HomeController {
     }
 
     @RequestMapping("/login")
-    public String login(){
-        return "login";
+    public String login(
+            Model model,
+            @RequestParam(value = "login-courseid", defaultValue = "-999") Long courseid,
+            @RequestParam(value = "login-password", defaultValue = "didn't load form") String passcode){
+
+        if (courseid == -999){
+            return "studentlogin";
+        }
+
+        Classroom classroom = classroomRepository.findById(courseid).get();
+        String pasaporte = classroom.getPasscode();
+        if (pasaporte.equals(passcode)){
+            model.addAttribute("course", classroom);
+            model.addAttribute("teacher", userService.findById(classroom.getTeacherid()));
+            model.addAttribute("students", userService.findStudentsByClassroomid(courseid));
+        }
+
+        return "studentloginsteptwo";
     }
 
-    @RequestMapping("/secure")
-    public String admin(){
-        return "secure";
-    }
 
-    @RequestMapping("/userlogin")
+    @RequestMapping("/prelogin")
     public String userLogin(){
         return "studentlogin";
     }
@@ -79,11 +91,10 @@ public class HomeController {
     @RequestMapping("/studentstepone")
     public String studentStepOne(
             Model model,
-        @RequestParam("login-courseid") Long courseid,
-        @RequestParam("login-password") String passcode){
+        @RequestParam(value = "login-courseid") Long courseid,
+        @RequestParam(value = "login-password") String passcode){
 
         Classroom classroom = classroomRepository.findById(courseid).get();
-
 
         if(classroom == null){
             return "redirect:/userlogin";
@@ -99,9 +110,14 @@ public class HomeController {
         return "redirect:/userlogin";
     }
 
-    @RequestMapping("/student")
+    @RequestMapping("/user")
     public String student(){
         return "student";
+    }
+
+    @RequestMapping("/admin")
+    public String teacher(){
+        return "teacher";
     }
 
 
